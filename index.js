@@ -16,4 +16,12 @@ io.on("connection", socket => {
   socket.on("chat", data => {
     io.sockets.emit("chat", data);
   });
+
+  socket.on("feedback", data => {
+    socket.broadcast.emit("feedback", data);
+  });
+
+  // socket.on("clear", () => {
+  //   io.sockets.emit("clear");
+  // });
 });
